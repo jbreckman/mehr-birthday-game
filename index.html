@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover" />
+    <meta name="theme-color" content="#1c1f33" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <title>Mehr's Birthday Secret</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎮</text></svg>" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="./src/style.css" />
+  </head>
+  <body>
+    <canvas id="c"></canvas>
+    <div id="ui">
+      <div id="world"></div>
+
+      <div id="hud" class="hidden">
+        <div class="hud-box hud-score">
+          <div id="score">0</div>
+          <div id="mult">×1.0</div>
+        </div>
+        <div class="hud-box hud-mid">
+          <div id="quarter">Q1</div>
+          <div id="clock">9:00 AM</div>
+        </div>
+        <div class="hud-box hud-right">
+          <div id="strikes"></div>
+          <div class="hud-btns">
+            <button id="muteBtn" class="icon-btn" aria-label="Mute">🔊</button>
+            <button id="pauseBtn" class="icon-btn" aria-label="Pause">⏸</button>
+          </div>
+        </div>
+      </div>
+
+      <div id="ticker" class="hidden"><span id="tickerText"></span></div>
+      <div id="banner"></div>
+
+      <div id="bar" class="hidden">
+        <button id="distract">🍩 Donuts <span id="dCount">2</span></button>
+        <button id="panic">😱 OH CRAP!</button>
+      </div>
+
+      <div id="screen-title" class="screen">
+        <div class="card title-card">
+          <div class="kicker">🎈 A Data Dept. Production 🎈</div>
+          <h1>Mehr's<br /><span>Birthday Secret</span></h1>
+          <p class="tag">Play games. Don't get caught. Hit your KPIs (Keep Playing, Idiot).</p>
+          <ul class="howto">
+            <li><b>Tap a monitor</b> to start a game on it. Tap again to hide it behind a spreadsheet.</li>
+            <li>More games at once = way more points: <b>2ⁿ</b> per second. Slacking off (no games) <b>drains</b> points. You start with 1,000. Hit 0 and you're out!</li>
+            <li>Only people <b>behind you</b> can see. A flashing red screen means <b>HIDE IT!</b> 👀 on a screen means someone could see it.</li>
+            <li><b>Tap the floor</b> left/right to roll your chair and block the screens behind you.</li>
+            <li>😱 <b>OH CRAP!</b> hides everything. 🍩 <b>Donuts</b> lure people away. 3 busts = fired.</li>
+          </ul>
+          <button id="playBtn" class="big-btn">▶ CLOCK IN</button>
+          <div id="hiscore" class="hiscore"></div>
+          <div class="keys">Keyboard: 1–6 monitors · A/D roll chair · Space = oh crap · F = donuts · P = pause</div>
+        </div>
+      </div>
+
+      <div id="screen-pause" class="screen hidden">
+        <div class="card">
+          <h2>☕ Coffee Break</h2>
+          <p>The office waits for no intern. Except right now.</p>
+          <button id="resumeBtn" class="big-btn">▶ BACK TO "WORK"</button>
+          <button id="quitBtn" class="small-btn">Quit to title</button>
+        </div>
+      </div>
+
+      <div id="screen-busted" class="hidden">
+        <div class="busted-word">BUSTED!</div>
+        <div id="bustedQuote" class="busted-quote"></div>
+        <div id="bustedStrike" class="busted-strike"></div>
+      </div>
+
+      <div id="screen-fired" class="screen hidden">
+        <div class="card memo">
+          <div class="memo-head">
+            <div>INTERNAL MEMO — HUMAN RESOURCES</div>
+            <div class="stamp">FIRED</div>
+          </div>
+          <div class="memo-body" id="firedBody"></div>
+          <div class="final-score">
+            <div class="label">Final score</div>
+            <div id="finalScore">0</div>
+            <div id="newBest" class="hidden">🏆 NEW PERSONAL BEST 🏆</div>
+          </div>
+          <div class="bday">🎂 Happy Birthday, Mehr! 🎂<br /><small>— from everyone who definitely never saw your screens</small></div>
+          <button id="againBtn" class="big-btn">↻ GET REHIRED</button>
+        </div>
+      </div>
+
+      <div id="flash"></div>
+      <div id="fps" class="hidden"></div>
+    </div>
+    <script type="module" src="./src/main.js"></script>
+  </body>
+</html>
